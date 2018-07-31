@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservice.carros.loja/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservice.carros.loja/">
+
+<xs:element name="consultarCarros" type="tns:consultarCarros"/>
+
+<xs:element name="consultarCarrosResponse" type="tns:consultarCarrosResponse"/>
+
+<xs:element name="consultarOfertas" type="tns:consultarOfertas"/>
+
+<xs:element name="consultarOfertasResponse" type="tns:consultarOfertasResponse"/>
+
+<xs:element name="consultarPorClass" type="tns:consultarPorClass"/>
+
+<xs:element name="consultarPorClassResponse" type="tns:consultarPorClassResponse"/>
+
+<xs:element name="consultarPorId" type="tns:consultarPorId"/>
+
+<xs:element name="consultarPorIdResponse" type="tns:consultarPorIdResponse"/>
+
+<xs:element name="consultarPorMarca" type="tns:consultarPorMarca"/>
+
+<xs:element name="consultarPorMarcaEClass" type="tns:consultarPorMarcaEClass"/>
+
+<xs:element name="consultarPorMarcaEClassResponse" type="tns:consultarPorMarcaEClassResponse"/>
+
+<xs:element name="consultarPorMarcaResponse" type="tns:consultarPorMarcaResponse"/>
+
+<xs:element name="salvarCarro" type="tns:salvarCarro"/>
+
+<xs:element name="salvarCarroResponse" type="tns:salvarCarroResponse"/>
+
+<xs:complexType name="consultarPorMarca">
+<xs:sequence>
+<xs:element name="idMarca" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarPorMarcaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:carro" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="carro">
+<xs:sequence>
+<xs:element name="ano" type="xs:string" minOccurs="0"/>
+<xs:element name="cambio" type="xs:string" minOccurs="0"/>
+<xs:element name="classificacao" type="tns:classificacao" minOccurs="0"/>
+<xs:element name="combustivel" type="xs:string" minOccurs="0"/>
+<xs:element name="cor" type="xs:string" minOccurs="0"/>
+<xs:element name="finalPlaca" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="imagem" type="xs:string" minOccurs="0"/>
+<xs:element name="km" type="xs:string" minOccurs="0"/>
+<xs:element name="marca" type="tns:marca" minOccurs="0"/>
+<xs:element name="modelo" type="xs:string" minOccurs="0"/>
+<xs:element name="observacoes" type="xs:string" minOccurs="0"/>
+<xs:element name="oferta" type="xs:boolean"/>
+<xs:element name="portas" type="xs:string" minOccurs="0"/>
+<xs:element name="valor" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="classificacao">
+<xs:sequence>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="imagem" type="xs:string" minOccurs="0"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="marca">
+<xs:sequence>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="imagem" type="xs:string" minOccurs="0"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="salvarCarro">
+<xs:sequence>
+<xs:element name="modelo" type="xs:string" minOccurs="0"/>
+<xs:element name="ano" type="xs:string" minOccurs="0"/>
+<xs:element name="km" type="xs:string" minOccurs="0"/>
+<xs:element name="cor" type="xs:string" minOccurs="0"/>
+<xs:element name="portas" type="xs:string" minOccurs="0"/>
+<xs:element name="combustivel" type="xs:string" minOccurs="0"/>
+<xs:element name="cambio" type="xs:string" minOccurs="0"/>
+<xs:element name="finalPlaca" type="xs:string" minOccurs="0"/>
+<xs:element name="valor" type="xs:string" minOccurs="0"/>
+<xs:element name="observacoes" type="xs:string" minOccurs="0"/>
+<xs:element name="imagem" type="xs:string" minOccurs="0"/>
+<xs:element name="oferta" type="xs:string" minOccurs="0"/>
+<xs:element name="idMarca" type="xs:string" minOccurs="0"/>
+<xs:element name="idClassificacao" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="salvarCarroResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:carro" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarCarros">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="consultarCarrosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:carro" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarOfertas">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="consultarOfertasResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:carro" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarPorMarcaEClass">
+<xs:sequence>
+<xs:element name="idMarca" type="xs:string" minOccurs="0"/>
+<xs:element name="idClassificacao" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarPorMarcaEClassResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:carro" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarPorId">
+<xs:sequence>
+<xs:element name="idCarro" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarPorIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:carro" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarPorClass">
+<xs:sequence>
+<xs:element name="idClassificacao" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarPorClassResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:carro" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

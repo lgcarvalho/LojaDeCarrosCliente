@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition template="_template.xhtml">
+        <ui:define name="head">
+            <link rel="stylesheet" type="text/css" href="resources/css/carro.css"/>
+        </ui:define>
+        <ui:define name="conteudo">
+            <h:form id="formCarros">
+                <p:dataScroller value="#{carroMB.carros}" var="carro" chunkSize="10" style="width: 90%;min-width: 90%">
+                    <f:facet name="header">
+                        Lista de carros
+                    </f:facet>
+                    <h:panelGrid columns="2" columnClasses="logo,detail" style="max-width: 90%;min-width: 90%;margin:auto;margin-bottom:5px;margin-top:5px;
+                                 border:2px solid lightgray;padding: 10px">
+                        <f:facet name="header">
+                            #{carro.modelo} - #{carro.observacoes}
+                        </f:facet>
+                        <p:graphicImage id="imgCarro" library="img" name="#{carro.imagem}" style="width: 280px;height: 200p;margin: auto;"/>
+                        <p:outputPanel>
+                            <h:panelGrid columns="2" cellpadding="5">
+                                <h:outputText value="Marca:"/>
+                                <h:outputText value="#{carro.marca.nome}"/>
+                                <h:outputText value="Tipo:"/>
+                                <h:outputText value="#{carro.classificacao.nome}"/>
+                                <h:outputText value="Ano:"/>
+                                <h:outputText value="#{carro.ano}"/>
+                                <h:outputText value="KM:"/>
+                                <h:outputText value="#{carro.km}"/>
+                                <h:outputText value="Cor:"/>
+                                <h:outputText value="#{carro.cor}"/>
+                                <h:outputText value="Portas:"/>
+                                <h:outputText value="#{carro.portas}"/>
+                                <h:outputText value="Combustivel:"/>
+                                <h:outputText value="#{carro.combustivel}"/>
+                                <h:outputText value="Cambio:"/>
+                                <h:outputText value="#{carro.cambio}"/>
+                                <h:outputText value="Final da Placa:"/>
+                                <h:outputText value="#{carro.finalPlaca}"/>
+                                <h:outputText value="Valor:"/>
+                                <h:outputText value="R$ #{carro.valor}"/>
+                            </h:panelGrid>
+                            <p:commandButton value="Entrar na conta" action="login?faces-redirect=true" rendered="#{contaLogada == null}" style="width: 100%"
+                                             icon="fa fa-fw fa-user"/>
+                            <p:commandButton value="Alugue" action="#{carroMB.irParaAluguel(carro)}" style="width: 100%" rendered="#{contaLogada != null}"
+                                             icon="fa fa-fw fa-shopping-cart"/>
+                        </p:outputPanel>
+                    </h:panelGrid>
+                </p:dataScroller> 
+            </h:form>               
+        </ui:define>
+    </ui:composition>
+</html>

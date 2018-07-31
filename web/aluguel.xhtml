@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition template="_template.xhtml">
+        <ui:define name="conteudo">
+            <h:form>
+                <p:wizard flowListener="#{aluguelWizard.onFlowProcess}" backLabel="Voltar" nextLabel="Próximo">    
+                    <p:tab id="tabLoja" title="Loja">
+                        <p:dataTable var="loja" value="#{lojaMB.lojas}">
+                            <f:facet name="header">
+                                Escolha uma loja para retirada
+                            </f:facet>
+                            <p:column headerText="Nome">
+                                <h:outputText value="#{loja.nome}"/>
+                            </p:column>
+                            <p:column headerText="Cidade">
+                                <h:outputText value="#{loja.endereco.cidade}"/>
+                            </p:column>
+                            <p:column headerText="Estado">
+                                <h:outputText value="#{loja.endereco.estado}"/>
+                            </p:column>
+                            <p:column headerText="CEP">
+                                <h:outputText value="#{loja.endereco.cep}"/>
+                            </p:column>
+                            <p:column>
+                                <p:commandButton value="Selecionar" action="#{lojaMB.guardarLoja(loja)}"/>                           
+                            </p:column>
+                        </p:dataTable>     
+                    </p:tab>
+                    <p:tab id="tabData" title="Dias">
+                        <p:panel header="Escolha a quantidade de dias">
+                            <h:panelGrid columns="2" columnClasses="label,value">
+                                <p:outputLabel value="Quantidade de dias" for="dia"/>
+                                <p:inputText id="dia" value="#{aluguelMB.aluguel.dias}" required="true"/>
+                            </h:panelGrid>
+                        </p:panel>
+                    </p:tab>
+                    <p:tab id="tabConfirmar" title="Confirmar">
+                        <p:panel header="Carro">
+                            <h:panelGrid columns="2" columnClasses="label,value">
+                                <h:outputText value="Modelo:" />
+                                <h:outputText value="#{carro.modelo}" />
+                                <h:outputText value="Marca" />
+                                <h:outputText value="#{carro.marca.nome}" />
+                                <h:outputText value="Classificação:" />
+                                <h:outputText value="#{carro.classificacao.nome}"/>
+                                <h:outputText value="Valor" />
+                                <h:outputText value="R$ #{carro.valor}" />
+                            </h:panelGrid>
+                        </p:panel>
+                        <p:panel header="Loja">
+                            <h:panelGrid columns="2" columnClasses="label,value">
+                                <h:outputText value="Nome:"/>
+                                <h:outputText value="#{loja.nome}"/>
+                                <h:outputText value="CEP:"/>
+                                <h:outputText value="#{loja.endereco.cep}"/>
+                                <h:outputText value="Cidade:"/>
+                                <h:outputText value="#{loja.endereco.cidade}"/>
+                                <h:outputText value="Estado:"/>
+                                <h:outputText value="#{loja.endereco.estado}"/>
+                                <h:outputText value="Telefone:"/>
+                                <h:outputText value="#{loja.telefone.numero}"/>
+                            </h:panelGrid>
+                        </p:panel>
+                        <p:panel header="Data">
+                            <h:panelGrid columns="2" columnClasses="label,value">
+                                <h:outputText value="Dias de aluguel:"/>
+                                <h:outputText value="#{aluguelMB.aluguel.dias}"/>
+                            </h:panelGrid>
+                        </p:panel>
+                        <p:commandButton value="Alugar" action="#{aluguelMB.salvarAluguel()}" style="width: 100%"/>
+                    </p:tab>
+                </p:wizard>
+            </h:form>          
+        </ui:define>
+    </ui:composition>
+</html>

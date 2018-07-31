@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:webproject2="http://www.netbeans.org/ns/web-project/2" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSGEN SECTION
+                ===================
+            -->
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <fail if="${wsimport.bad.version}" message="WsImport ant task defined in the classpath ${j2ee.platform.wsimport.classpath} has a serious bug. See http://wiki.netbeans.org/MetroIssue for details."/>
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <property name="j2ee.platform.wsimport.classpath" value="${libs.jaxws21.classpath}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${java.home}/../lib/tools.jar:${j2ee.platform.wsimport.classpath}:${javac.classpath}"/>
+        </taskdef>
+        <condition property="conf-dir" value="${conf.dir}/" else="">
+            <isset property="conf.dir"/>
+        </condition>
+    </target>
+    <target name="wsimport-client-MarcaWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/MarcaWS"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/MarcaWS" destdir="${build.generated.dir}/jax-wsCache/MarcaWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/MarcaWS/wsdl/localhost_8080/MarcaWS/MarcaWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/MarcaWS/MarcaWS?wsdl" xnocompile="true" xendorsed="true" package="loja.cliente.ws.marca">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/MarcaWS/wsdl/localhost_8080/MarcaWS/MarcaWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/MarcaWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/MarcaWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-MarcaWS" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/loja/cliente/ws/marca"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/MarcaWS"/>
+    </target>
+    <target name="wsimport-client-ClassificacaoWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ClassificacaoWS"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ClassificacaoWS" destdir="${build.generated.dir}/jax-wsCache/ClassificacaoWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ClassificacaoWS/wsdl/localhost_8080/ClassificacaoWS/ClassificacaoWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/ClassificacaoWS/ClassificacaoWS?wsdl" xnocompile="true" xendorsed="true" package="loja.cliente.ws.classificacao">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ClassificacaoWS/wsdl/localhost_8080/ClassificacaoWS/ClassificacaoWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ClassificacaoWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ClassificacaoWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ClassificacaoWS" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/loja/cliente/ws/classificacao"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ClassificacaoWS"/>
+    </target>
+    <target name="wsimport-client-ContaWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ContaWS"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ContaWS" destdir="${build.generated.dir}/jax-wsCache/ContaWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ContaWS/wsdl/localhost_8080/ContaWS/ContaWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/ContaWS/ContaWS?wsdl" xnocompile="true" xendorsed="true" package="loja.cliente.ws.conta">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ContaWS/wsdl/localhost_8080/ContaWS/ContaWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ContaWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ContaWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ContaWS" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/loja/cliente/ws/conta"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ContaWS"/>
+    </target>
+    <target name="wsimport-client-LojaWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/LojaWS"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/LojaWS" destdir="${build.generated.dir}/jax-wsCache/LojaWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/LojaWS/wsdl/localhost_8080/LojaWS/LojaWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LojaWS/LojaWS?wsdl" xnocompile="true" xendorsed="true" package="loja.cliente.ws.loja">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/LojaWS/wsdl/localhost_8080/LojaWS/LojaWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/LojaWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/LojaWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-LojaWS" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/loja/cliente/ws/loja"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/LojaWS"/>
+    </target>
+    <target name="wsimport-client-CarroWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/CarroWS"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CarroWS" destdir="${build.generated.dir}/jax-wsCache/CarroWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/CarroWS/wsdl/localhost_8080/CarroWS/CarroWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/CarroWS/CarroWS?wsdl" xnocompile="true" xendorsed="true" package="loja.cliente.ws.carro">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/CarroWS/wsdl/localhost_8080/CarroWS/CarroWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/CarroWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/CarroWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-CarroWS" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/loja/cliente/ws/carro"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/CarroWS"/>
+    </target>
+    <target name="wsimport-client-AluguelWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/AluguelWS"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AluguelWS" destdir="${build.generated.dir}/jax-wsCache/AluguelWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/AluguelWS/wsdl/localhost_8080/AluguelWS/AluguelWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AluguelWS/AluguelWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/AluguelWS/wsdl/localhost_8080/AluguelWS/AluguelWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/AluguelWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/AluguelWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-AluguelWS" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/loja/carros/webservice"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/AluguelWS"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-MarcaWS, wsimport-client-ClassificacaoWS, wsimport-client-ContaWS, wsimport-client-LojaWS, wsimport-client-CarroWS, wsimport-client-AluguelWS"/>
+</project>

@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservice.carros.loja/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservice.carros.loja/">
+
+<xs:element name="Exception" type="tns:Exception"/>
+
+<xs:element name="atualizarConta" type="tns:atualizarConta"/>
+
+<xs:element name="atualizarContaResponse" type="tns:atualizarContaResponse"/>
+
+<xs:element name="consultarContas" type="tns:consultarContas"/>
+
+<xs:element name="consultarContasResponse" type="tns:consultarContasResponse"/>
+
+<xs:element name="realizarLogin" type="tns:realizarLogin"/>
+
+<xs:element name="realizarLoginResponse" type="tns:realizarLoginResponse"/>
+
+<xs:element name="salvarConta" type="tns:salvarConta"/>
+
+<xs:element name="salvarContaResponse" type="tns:salvarContaResponse"/>
+
+<xs:complexType name="consultarContas">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="consultarContasResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:conta" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="conta">
+<xs:sequence>
+<xs:element name="cpf" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="endereco" type="tns:endereco" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="senha" type="xs:string" minOccurs="0"/>
+<xs:element name="sobrenome" type="xs:string" minOccurs="0"/>
+<xs:element name="telefone" type="tns:telefone" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="endereco">
+<xs:sequence>
+<xs:element name="cep" type="xs:string" minOccurs="0"/>
+<xs:element name="cidade" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="telefone">
+<xs:sequence>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="numero" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="salvarConta">
+<xs:sequence>
+<xs:element name="cpf" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="senha" type="xs:string" minOccurs="0"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="sobrenome" type="xs:string" minOccurs="0"/>
+<xs:element name="cep" type="xs:string" minOccurs="0"/>
+<xs:element name="cidade" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="numero" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="salvarContaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:conta" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="atualizarConta">
+<xs:sequence>
+<xs:element name="idConta" type="xs:string" minOccurs="0"/>
+<xs:element name="cpf" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="senha" type="xs:string" minOccurs="0"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="sobrenome" type="xs:string" minOccurs="0"/>
+<xs:element name="idEndereco" type="xs:string" minOccurs="0"/>
+<xs:element name="cep" type="xs:string" minOccurs="0"/>
+<xs:element name="cidade" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="idTelefone" type="xs:string" minOccurs="0"/>
+<xs:element name="numero" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="atualizarContaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:conta" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Exception">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="realizarLogin">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="senha" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="realizarLoginResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:conta" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

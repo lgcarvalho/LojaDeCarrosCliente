@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/TelefoneWS/TelefoneWS?wsdl" uri="wsdl/localhost_8080/TelefoneWS/TelefoneWS.wsdl"/>
+    <system systemId="http://localhost:8080/TelefoneWS/TelefoneWS?xsd=1" uri="wsdl/localhost_8080/TelefoneWS/TelefoneWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ContaWS/ContaWS?wsdl" uri="wsdl/localhost_8080/ContaWS/ContaWS.wsdl"/>
+    <system systemId="http://localhost:8080/ContaWS/ContaWS?xsd=1" uri="wsdl/localhost_8080/ContaWS/ContaWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/EnderecoWS/EnderecoWS?wsdl" uri="wsdl/localhost_8080/EnderecoWS/EnderecoWS.wsdl"/>
+    <system systemId="http://localhost:8080/EnderecoWS/EnderecoWS?xsd=1" uri="wsdl/localhost_8080/EnderecoWS/EnderecoWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/MarcaWS/MarcaWS?wsdl" uri="wsdl/localhost_8080/MarcaWS/MarcaWS.wsdl"/>
+    <system systemId="http://localhost:8080/MarcaWS/MarcaWS?xsd=1" uri="wsdl/localhost_8080/MarcaWS/MarcaWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ClassificacaoWS/ClassificacaoWS?wsdl" uri="wsdl/localhost_8080/ClassificacaoWS/ClassificacaoWS.wsdl"/>
+    <system systemId="http://localhost:8080/ClassificacaoWS/ClassificacaoWS?xsd=1" uri="wsdl/localhost_8080/ClassificacaoWS/ClassificacaoWS.xsd_1.xsd"/>
+    <system systemId="https://desktop-c73t93j:8181/ClassificacaoWS/ClassificacaoWS?wsdl" uri="wsdl/desktop-c73t93j_8181/ClassificacaoWS/ClassificacaoWS.wsdl"/>
+    <system systemId="https://desktop-c73t93j:8181/ClassificacaoWS/ClassificacaoWS?xsd=1" uri="wsdl/desktop-c73t93j_8181/ClassificacaoWS/ClassificacaoWS.xsd_1.xsd"/>
+    <system systemId="https://desktop-c73t93j:8181/MarcaWS/MarcaWS?wsdl" uri="wsdl/desktop-c73t93j_8181/MarcaWS/MarcaWS.wsdl"/>
+    <system systemId="https://desktop-c73t93j:8181/MarcaWS/MarcaWS?xsd=1" uri="wsdl/desktop-c73t93j_8181/MarcaWS/MarcaWS.xsd_1.xsd"/>
+    <system systemId="https://desktop-c73t93j:8181/ContaWS/ContaWS?wsdl" uri="wsdl/desktop-c73t93j_8181/ContaWS/ContaWS.wsdl"/>
+    <system systemId="https://desktop-c73t93j:8181/ContaWS/ContaWS?xsd=1" uri="wsdl/desktop-c73t93j_8181/ContaWS/ContaWS.xsd_1.xsd"/>
+    <system systemId="https://desktop-c73t93j:8181/LojaWS/LojaWS?wsdl" uri="wsdl/desktop-c73t93j_8181/LojaWS/LojaWS.wsdl"/>
+    <system systemId="https://desktop-c73t93j:8181/LojaWS/LojaWS?xsd=1" uri="wsdl/desktop-c73t93j_8181/LojaWS/LojaWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/LojaWS/LojaWS?wsdl" uri="wsdl/localhost_8080/LojaWS/LojaWS.wsdl"/>
+    <system systemId="http://localhost:8080/LojaWS/LojaWS?xsd=1" uri="wsdl/localhost_8080/LojaWS/LojaWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/CarroWS/CarroWS?wsdl" uri="wsdl/localhost_8080/CarroWS/CarroWS.wsdl"/>
+    <system systemId="http://localhost:8080/CarroWS/CarroWS?xsd=1" uri="wsdl/localhost_8080/CarroWS/CarroWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/AluguelWS/AluguelWS?wsdl" uri="wsdl/localhost_8080/AluguelWS/AluguelWS.wsdl"/>
+    <system systemId="http://localhost:8080/AluguelWS/AluguelWS?xsd=1" uri="wsdl/localhost_8080/AluguelWS/AluguelWS.xsd_1.xsd"/>
+</catalog>

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition template="_template.xhtml">
+        <ui:define name="conteudo">
+            <div id="logoSite">
+                <p:graphicImage library="img" name="logo_site.png" style="width: 600px; height: 200px"/>
+            </div>
+            <p:panel style="text-align: center;margin-top: 10px;margin-bottom: 10px">
+                <f:facet name="header">
+                    Marcas que trabalhamos
+                </f:facet>
+                <p:ring id="ring" value="#{marcaMB.marcas}" var="marca" autoplay="true" autoplayDuration="5000"
+                        style="min-width: 100%">
+                    <p:graphicImage id="imgMarca" library="img" name="#{marca.imagem}" width="100%" height="100%"/>
+                </p:ring>
+            </p:panel>
+            <h:form id="formCarros">
+                <p:carousel value="#{carroMB.ofertas}" headerText="Carros em oferta" var="carro" itemStyle="text-align:center" responsive="true" autoPlayInterval="5000"
+                            style="min-width: 100%">
+                    <h:panelGrid columns="2" columnClasses="label,value">
+                        <f:facet name="header">
+                            <p:graphicImage library="img" name="#{carro.imagem}" style="width: 80%;height: 150px"/> 
+                        </f:facet>
+                        <h:outputText value="Modelo:" />
+                        <h:outputText value="#{carro.modelo}" />
+                        <h:outputText value="Marca" />
+                        <h:outputText value="#{carro.marca.nome}" />
+                        <h:outputText value="Classificação:" />
+                        <h:outputText value="#{carro.classificacao.nome}"/>
+                        <h:outputText value="Valor" />
+                        <h:outputText value="R$ #{carro.valor}" />
+                        <f:facet name="footer">
+                            <p:commandButton value="Ver mais" action="ofertas?faces-redirect=true" icon="fa fa-fw fa-car" style="width: 100%"/>
+                        </f:facet>
+                    </h:panelGrid>
+                </p:carousel> 
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>
+

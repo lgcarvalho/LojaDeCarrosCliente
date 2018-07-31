@@ -1,0 +1,134 @@
+*, :after, :before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#tudo {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    background-color: #F4F4F4;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+#logoSite {
+    text-align: center;
+}
+
+#conteudo {
+    width: 70%;
+    min-width: 70%;
+    max-width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    padding-bottom: 215px;
+}
+
+#listasOpcoes {
+    border-top: 1px solid white;
+    margin: auto;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    background-color: #2399E5;
+    padding-bottom: 40px;
+}
+
+#listasOpcoes h3 {
+    margin-bottom: 20px;
+}
+
+#rodapeOpcoes {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    color: white;
+}
+
+#rodape {
+    border-top: 1px solid white;
+    background-color: #1971a8;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+}
+
+#direitos {
+    float: left;
+    color: white;
+    padding-top: 13px;
+    margin-left: 50px;
+    height: 100%;
+}
+
+#logo {
+    float: right;
+    margin-right: 50px;
+    height: 100%
+}
+
+#atendimento, #institucional {
+    border-right: 1px solid white;
+}
+
+#atendimento, #institucional, #redesSociais {
+    width: 33%;
+    min-width: 200px;
+    margin: auto;
+    text-align: left;
+    display: inline-block;
+    padding-left: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#listaAtendimento, #listaRedesSociais, #listaInstitucional {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100px;
+}
+
+#listaInstitucional li a {
+    text-align: center;
+    text-decoration: none;
+    color: #103b56;
+}
+
+#listaAtendimento li a {
+    text-align: center;
+    text-decoration: none;
+    color: #103b56;
+}
+
+#listaRedesSociais {
+    width: 200px;
+}
+
+#listaRedesSociais li a {
+    text-align: center;
+    text-decoration: none;
+    color: #103b56;
+}
+
+#conteudoRodape {
+    margin-left: 10px;
+    float: left;
+}
+
+#imagemRodape {
+    margin-right: 10px;
+    float: right;
+} 

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition template="_template.xhtml">
+        <ui:define name="conteudo">
+            <p:panel header="Quem somos">
+                <p>Somos uma empresa que busca o melhor para o seu conforto em alugueis de carros.</p>
+                <br></br>
+                <p>Possuimos uma frota de carros de várias categorias, modelos e marcas. Trabalhamos com carros do tipo Compacto,
+                    Sedan, SUV e Luxo e com marcas como Chevrolet, Ford, Fiat, Hyundai, Renault, Volkswagen, Mercedes-benz,
+                    BMW e Audi.</p>
+                <br></br>
+                <p>Nossos carros estão sempre impecaveis para que você tenha a melhor experiencia possível.</p>
+                <br></br>
+                <p>Alugue hoje seu carro!!</p>
+            </p:panel>
+            <h:form style="width: 100%">
+                <p:messages globalOnly="true"/>
+                <p:panelGrid columns="3" layout="grid" style="width: 100%;margin-top: 20px" columnClasses="label,value">
+                    <f:facet name="header">
+                        Fale Conosco
+                    </f:facet>
+                    <p:outputLabel value="Nome:" for="nome"/>
+                    <p:inputText id="nome" required="true" requiredMessage="Nome obrigatório"/>
+                    <p:message for="nome"/>
+                    <p:outputLabel value="Email:" for="email"/>
+                    <p:inputText id="email" required="true" requiredMessage="Email obrigatório">
+                        <f:attribute name="type" value="email"/>
+                        <f:validateRegex pattern=".+@.+"/>
+                        <f:ajax event="blur" render="email"/>
+                    </p:inputText>
+                    <p:message for="email"/>
+                    <p:outputLabel value="Comentário:" for="comentario"/>
+                    <p:inputTextarea maxlength="255" rows="13" id="comentario" required="true" requiredMessage="Comentário obrigatório"/>
+                    <p:message for="comentario"/>                  
+                </p:panelGrid>
+                <p:commandButton value="Enviar" action="#{faleConoscoMB.encaminharDuvida()}" style="width: 100%" icon="fa fa-fw fa-envelope-o"
+                                 update="@form" process="@form"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>

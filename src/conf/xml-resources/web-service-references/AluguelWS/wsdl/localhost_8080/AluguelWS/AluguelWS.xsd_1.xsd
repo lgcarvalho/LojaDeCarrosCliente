@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservice.carros.loja/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservice.carros.loja/">
+
+<xs:element name="consultarPedidos" type="tns:consultarPedidos"/>
+
+<xs:element name="consultarPedidosResponse" type="tns:consultarPedidosResponse"/>
+
+<xs:element name="excluirPedido" type="tns:excluirPedido"/>
+
+<xs:element name="excluirPedidoResponse" type="tns:excluirPedidoResponse"/>
+
+<xs:element name="salvarAluguel" type="tns:salvarAluguel"/>
+
+<xs:element name="salvarAluguelResponse" type="tns:salvarAluguelResponse"/>
+
+<xs:complexType name="salvarAluguel">
+<xs:sequence>
+<xs:element name="dias" type="xs:string" minOccurs="0"/>
+<xs:element name="status" type="xs:string" minOccurs="0"/>
+<xs:element name="idConta" type="xs:string" minOccurs="0"/>
+<xs:element name="idCarro" type="xs:string" minOccurs="0"/>
+<xs:element name="idLoja" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="salvarAluguelResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:aluguel" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="aluguel">
+<xs:sequence>
+<xs:element name="carro" type="tns:carro" minOccurs="0"/>
+<xs:element name="conta" type="tns:conta" minOccurs="0"/>
+<xs:element name="dias" type="xs:int"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="loja" type="tns:loja" minOccurs="0"/>
+<xs:element name="status" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="carro">
+<xs:sequence>
+<xs:element name="ano" type="xs:string" minOccurs="0"/>
+<xs:element name="cambio" type="xs:string" minOccurs="0"/>
+<xs:element name="classificacao" type="tns:classificacao" minOccurs="0"/>
+<xs:element name="combustivel" type="xs:string" minOccurs="0"/>
+<xs:element name="cor" type="xs:string" minOccurs="0"/>
+<xs:element name="finalPlaca" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="imagem" type="xs:string" minOccurs="0"/>
+<xs:element name="km" type="xs:string" minOccurs="0"/>
+<xs:element name="marca" type="tns:marca" minOccurs="0"/>
+<xs:element name="modelo" type="xs:string" minOccurs="0"/>
+<xs:element name="observacoes" type="xs:string" minOccurs="0"/>
+<xs:element name="oferta" type="xs:boolean"/>
+<xs:element name="portas" type="xs:string" minOccurs="0"/>
+<xs:element name="valor" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="classificacao">
+<xs:sequence>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="imagem" type="xs:string" minOccurs="0"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="marca">
+<xs:sequence>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="imagem" type="xs:string" minOccurs="0"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="conta">
+<xs:sequence>
+<xs:element name="cpf" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="endereco" type="tns:endereco" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="senha" type="xs:string" minOccurs="0"/>
+<xs:element name="sobrenome" type="xs:string" minOccurs="0"/>
+<xs:element name="telefone" type="tns:telefone" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="endereco">
+<xs:sequence>
+<xs:element name="cep" type="xs:string" minOccurs="0"/>
+<xs:element name="cidade" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="telefone">
+<xs:sequence>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="numero" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loja">
+<xs:sequence>
+<xs:element name="coordenada" type="xs:string" minOccurs="0"/>
+<xs:element name="endereco" type="tns:endereco" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="imagem" type="xs:string" minOccurs="0"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="telefone" type="tns:telefone" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarPedidos">
+<xs:sequence>
+<xs:element name="idCOnta" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarPedidosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:aluguel" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="excluirPedido">
+<xs:sequence>
+<xs:element name="arg0" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="excluirPedidoResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>

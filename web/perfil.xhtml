@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition template="_template.xhtml">
+        <ui:define name="conteudo"> 
+            <p:messages globalOnly="true"/>
+            <h:form id="formConta">
+                <h3>Minha Conta</h3>
+                <p:tabView orientation="left">                   
+                    <p:tab title="Painel de Controle">
+                        <div id="meuEndereco">
+                            <p:panel>                                
+                                <f:facet name="header">
+                                    Informações da conta
+                                </f:facet>
+                                <p:panelGrid columns="1" layout="grid">
+                                    <h:outputText value="#{sessionScope['contaLogada'].nome} #{sessionScope['contaLogada'].sobrenome}"/>
+                                    <h:outputText value="#{sessionScope['contaLogada'].cpf}"/>
+                                    <h:outputText value="#{sessionScope['contaLogada'].endereco.cidade}"/>
+                                    <h:outputText value="#{sessionScope['contaLogada'].endereco.estado}"/>
+                                    <h:outputText value="CEP: #{sessionScope['contaLogada'].endereco.cep}"/>
+                                    <h:outputText value="Telefone: #{sessionScope['contaLogada'].telefone.numero}"/>
+                                </p:panelGrid>
+                            </p:panel>
+                        </div>
+                    </p:tab>
+                    <p:tab title="Meu cadastro">
+                        <p:panelGrid columns="3" layout="grid">
+                            <f:facet name="header">
+                                Editar Cadastro
+                            </f:facet>
+                            <p:outputLabel value="Nome:" for="nome"/>
+                            <p:inputText id="nome" value="#{sessionScope['contaLogada'].nome}" required="true"/>
+                            <p:message for="nome"/>
+                            <p:outputLabel value="Sobrenome:" for="sobrenome"/>
+                            <p:inputText id="sobrenome" value="#{sessionScope['contaLogada'].sobrenome}" required="true"/>
+                            <p:message for="sobrenome"/>
+                            <p:outputLabel value="E-mail:"/>
+                            <p:inputText id="email" value="#{sessionScope['contaLogada'].email}" required=""/>
+                            <p:message for="email"/>
+                            <p:outputLabel value="Numero:" for="numero"/>
+                            <p:inputText id="numero" value="#{sessionScope['contaLogada'].telefone.numero}" required="true"/>
+                            <p:message for="numero"/>
+                            <p:outputLabel value="Tipo:" for="tipo"/>
+                            <p:inputText id="tipo" value="#{sessionScope['contaLogada'].telefone.tipo}" required="true"/>
+                            <p:message for="tipo"/>
+                        </p:panelGrid>
+                        <p:commandButton value="Salvar dados" action="#{contaMB.atualizar()}" style="width: 100%"/>
+                    </p:tab>
+                    <p:tab title="Meu Endereco">
+                        <p:panelGrid columns="3" layout="grid">
+                            <f:facet name="header">
+                                Endereco Cadastrado
+                            </f:facet>
+                            <p:outputLabel value="Cep:" for="cep"/>
+                            <p:inputText id="cep" value="#{sessionScope['contaLogada'].endereco.cep}" required="true"/>
+                            <p:message for="cep"/>
+                            <p:outputLabel value="Cidade:" for="cidade"/>
+                            <p:inputText id="cidade" value="#{sessionScope['contaLogada'].endereco.cidade}" required="true"/>
+                            <p:message for="cidade"/>
+                            <p:outputLabel value="Estado:" for="estado"/>
+                            <p:inputText id="estado" value="#{sessionScope['contaLogada'].endereco.estado}" required="true"/>
+                            <p:message for="estado"/>                              
+                        </p:panelGrid>
+                        <p:commandButton value="Salvar dados" action="#{contaMB.atualizar()}" style="width: 100%"/>
+                    </p:tab>
+                    <p:tab title="Meu Pedido">
+                        <p:dataTable var="aluguel" value="#{aluguelMB.alugueis}">
+                            <f:facet name="header">
+                                Meus Pedidos
+                            </f:facet>
+                            <p:column headerText="Id">
+                                <h:outputText value="#{aluguel.id}" />
+                            </p:column>
+                            <p:column headerText="Carro">
+                                <h:outputText value="#{aluguel.carro.modelo}" />
+                            </p:column>
+                            <p:column headerText="Status">
+                                <h:outputText value="#{aluguel.status}" />
+                            </p:column>
+                            <p:column headerText="Dias">
+                                <h:outputText value="#{aluguel.dias}"/>
+                            </p:column>
+                            <p:column headerText="">
+                                <p:commandButton value="Cancelar" action="#{aluguelMB.excluirPedido(aluguel.id)}"/>
+                            </p:column>
+                        </p:dataTable>
+                    </p:tab>
+                </p:tabView> 
+            </h:form>       
+        </ui:define>
+    </ui:composition>
+</html>

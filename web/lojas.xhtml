@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition template="_template.xhtml">
+        <ui:define name="head">
+            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRJns2ZmTUn8K-ieZzCfJBxQYORuc34qY"></script> 
+        </ui:define>
+        <ui:define name="conteudo">
+            <div>
+                <h:form id="formLojas">
+                    <p:dataScroller value="#{lojaMB.lojas}" var="loja">
+                        <f:facet name="header">
+                            Conheca nossas lojas
+                        </f:facet>
+                        <h:panelGrid columns="3" style="width: 80%;border: 2px solid lightgray;margin: auto;margin-bottom: 5px;margin-top: 5px"  cellspacing="10px" >
+                            <p:outputPanel>
+                                <h:panelGrid columns="2" cellpadding="5">
+                                    <h:outputText value="Nome:"/>
+                                    <h:outputText value="#{loja.nome}"/>
+                                    <h:outputText value="CEP:"/>
+                                    <h:outputText value="#{loja.endereco.cep}"/>
+                                    <h:outputText value="Cidade:"/>
+                                    <h:outputText value="#{loja.endereco.cidade}"/>
+                                    <h:outputText value="Estado:"/>
+                                    <h:outputText value="#{loja.endereco.estado}"/>
+                                    <h:outputText value="Telefone:"/>
+                                    <h:outputText value="#{loja.telefone.numero}"/>
+                                </h:panelGrid>
+                                <p:gmap center="#{loja.coordenada}" zoom="15" type="HYBRID" style="width:100%;height:150px;border: 2px solid black" model="#{markersView.getSimpleModel(loja.nome)}" />
+                            </p:outputPanel>
+                        </h:panelGrid>
+                    </p:dataScroller>
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</html>
